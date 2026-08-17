@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدينة التسعين | مجلس القضاء العسكري</title>
+<style>
+:root{
+  --bg:#090d14;--panel:#111824;--panel2:#0c131d;--border:#293548;
+  --text:#f3f4f6;--muted:#98a2b3;--accent:#9f1d2b;--accent2:#6e121c;--ok:#22c55e
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(159,29,43,.15),transparent 30rem),var(--bg);
+color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+header{border-bottom:1px solid rgba(255,255,255,.06);background:rgba(9,13,20,.92);position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:900}
+.brand b{display:block}.brand small{color:var(--muted)}
+.badge{border:1px solid rgba(159,29,43,.45);padding:7px 11px;border-radius:999px;color:#ffbec5;background:rgba(159,29,43,.1);font-size:12px}
+main{width:min(1000px,calc(100% - 28px));margin:34px auto}
+.hero{text-align:center;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 10px}
+.hero p{margin:0;color:var(--muted);line-height:1.8}
+.card{background:linear-gradient(180deg,#131d2b,#0f1621);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border)}
+.tab{padding:15px 10px;background:transparent;color:#cbd5e1;border:0;border-left:1px solid var(--border);cursor:pointer;font-weight:800}
+.tab:last-child{border-left:0}.tab.active{background:rgba(159,29,43,.14);color:#fff;box-shadow:inset 0 -3px 0 var(--accent)}
+.content{padding:22px}.section{display:none}.section.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.full{grid-column:1/-1}
+label{display:block;margin-bottom:7px;font-size:13px;font-weight:700}
+input,select,textarea{width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:12px 13px;border-radius:12px;outline:none;font-size:14px}
+textarea{min-height:105px;resize:vertical;line-height:1.7}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(159,29,43,.12)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button.action{border:0;border-radius:12px;padding:12px 17px;color:#fff;font-weight:800;cursor:pointer}
+.primary{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.secondary{background:#223047;border:1px solid #37455d}.ghost{background:transparent;border:1px solid var(--border)}
+.preview{margin-top:18px;border:1px dashed #37455d;border-radius:14px;background:#0a1119;padding:15px}
+.preview-head{display:flex;justify-content:space-between;gap:10px;color:#cbd5e1;font-size:13px;margin-bottom:9px}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;color:#aab4c3;font-family:Tahoma,Arial,sans-serif;line-height:1.9;font-size:13px}
+.toast{position:fixed;left:20px;bottom:20px;background:#102519;border:1px solid rgba(34,197,94,.4);color:#baf5c8;padding:11px 14px;border-radius:11px;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+footer{text-align:center;color:#687487;font-size:12px;padding:20px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.badge{display:none}.tabs{grid-template-columns:1fr}.tab{border-left:0;border-bottom:1px solid var(--border)}.actions .action{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><div class="logo">90</div><div><b>مدينة التسعين</b><small>مجلس القضاء العسكري</small></div></div>
+    <div class="badge">النظام القضائي العسكري</div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>نماذج الشرطة العسكرية الموحدة بحرس الحدود</h1>
+    <p>النظام القضائي العسكري</p>
+  </div>
+
+  <div class="card">
+    <div class="tabs">
+      <button class="tab active" data-tab="summon">الاستدعاء</button>
+      <button class="tab" data-tab="judgment">الحكم العسكري</button>
+      <button class="tab" data-tab="investigation">التحقيق</button>
+    </div>
+
+    <div class="content">
+      <section id="summon" class="section active">
+        <div class="grid">
+          <div>
+            <label>كود / آيدي العسكري</label>
+            <input id="sPersonId" placeholder="أدخل آيدي العسكري">
+          </div>
+          <div>
+            <label>عضو هيئة التحقيق</label>
+            <input id="sInvestigatorId" placeholder="أدخل آيدي عضو هيئة التحقيق">
+          </div>
+          <div class="full">
+            <label>رابط موقع التذكرة</label>
+            <input id="sTicket" value="https://discord.com/channels/1304147579533004940/1304480910795608075/1349755071889674291">
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action primary" onclick="copyCurrent('summon')">نسخ الاستدعاء</button>
+        </div>
+        <div class="preview"><div class="preview-head"><span>معاينة الاستدعاء</span></div><pre id="pSummon"></pre></div>
+      </section>
+
+      <section id="judgment" class="section">
+        <div class="grid">
+          <div><label>رقم الحكم</label><input id="jNo" placeholder="رقم الحكم"></div>
+          <div><label>آيدي المذكور</label><input id="jPersonId" placeholder="آيدي العسكري"></div>
+          <div>
+            <label>الإنذار</label>
+            <select id="jWarning">
+              <option>إنذار شفهي</option>
+              <option>إنذار وظيفي أول</option>
+              <option>إنذار وظيفي ثاني</option>
+              <option>إنذار وظيفي ثالث</option>
+            </select>
+          </div>
+          <div><label>قيمة الغرامة</label><input id="jFine" value="1000" inputmode="numeric"></div>
+          <div class="full"><label>السبب</label><textarea id="jReason" placeholder="اكتب سبب الحكم"></textarea></div>
+          <div>
+            <label>مصدر الحكم</label>
+            <select id="jApproverRank">
+              <option>رقيب</option>
+              <option>رقيب أول</option>
+              <option>رئيس رقباء</option>
+              <option>ملازم</option>
+              <option>ملازم أول</option>
+              <option>نقيب</option>
+              <option>رائد</option>
+              <option>مقدم</option>
+              <option>عقيد</option>
+              <option>عميد</option>
+              <option>لواء</option>
+              <option>فريق</option>
+              <option>فريق أول</option>
+            </select>
+          </div>
+          <div><label>آيدي مصدر الحكم</label><input id="jApproverId" placeholder="آيدي المعتمد"></div>
+        </div>
+        <div class="actions"><button class="action primary" onclick="copyCurrent('judgment')">نسخ الحكم</button></div>
+        <div class="preview"><div class="preview-head"><span>معاينة الحكم العسكري</span></div><pre id="pJudgment"></pre></div>
+      </section>
+
+      <section id="investigation" class="section">
+        <div class="grid">
+          <div><label>آيدي الفرد</label><input id="iPersonId" placeholder="آيدي الفرد"></div>
+          <div><label>الكود</label><input id="iCode" placeholder="الكود"></div>
+          <div class="full"><label>المخالفة / السبب</label><textarea id="iViolation" placeholder="اكتب المخالفة والسبب"></textarea></div>
+          <div class="full"><label>الأقوال</label><textarea id="iStatement" placeholder="اكتب الأقوال"></textarea></div>
+          <div class="full"><label>الاقتراح</label><textarea id="iSuggestion" placeholder="اكتب الاقتراح"></textarea></div>
+          <div class="full"><label>الدليل</label><textarea id="iEvidence" placeholder="رابط أو وصف الدليل"></textarea></div>
+        </div>
+        <div class="actions"><button class="action primary" onclick="copyCurrent('investigation')">نسخ التحقيق</button></div>
+        <div class="preview"><div class="preview-head"><span>معاينة التحقيق</span></div><pre id="pInvestigation"></pre></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>جميع الحقوق محفوظة © مدينة التسعين — مجلس القضاء العسكري</footer>
+<div class="toast" id="toast">تم النسخ</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const mention=id=>{const v=$(id).value.trim();return v?`<@${v}>`:'<@>'};
+
+function summonText(){
+return `**⁨⁨⁨⁨⁨⁨⁨\`﷽\`⁩⁩⁩⁩⁩⁩⁩**
+
+**الموضوع : اســتــدعــاء للمذكورين 
+
+${mention('sPersonId')} 
+
+
+⁨⁨⁨⁨⁨⁨⁨\`\`\`diff
+
+
+- يجب عليك التوجه الى قاعدة  البيانات وفتح تكت  الاستجابة الى استدعاء خلال مدة لا تزيد عن 6 ساعات من نزول الاستدعاء خلاف ذلك سيتم انزال الحكم غيابيا -
+
+\`\`\`⁩⁩⁩⁩⁩⁩⁩
+
+⁨⁨⁨⁨ ${$('sTicket').value.trim()} ⁨⁨⁨\` موقع التذكرة :\`⁩⁩⁩⁩⁩⁩⁩
+
+
+
+\`  عضو هيئه التحقيق  | \` ${mention('sInvestigatorId')}   
+
+|| <@&1045009108945883289> ||`;
+}
+
+function judgmentText(){
+const fine=$('jFine').value.trim()||'1000';
+return `**⁨\`﷽\`⁩**
+
+**الــمــوضــوع    |   حكم عسكري**
+
+** رقــم الــحــكــم  | ${$('jNo').value.trim()} **
+
+**⁨\` للمذكور ادناه : \`⁩** 
+
+⁨\`-\`⁩ **[                  ${mention('jPersonId')}                 ] **
+
+\`1\`  **غرامة ${fine} ريال تسعيني** 
+
+\`2\`  ⁩**${$('jWarning').value}** 
+
+** السبب : ${$('jReason').value.trim()}  **
+
+⁨\`\`\`diff
+- يرجى انتظار توجيهات قادة حـرس الحـدود في رسائل حرس الحدود لاستلام الغرامات - 
+
+- يحق للمذكور أعلاه الطعـن بالحكم تحـت مدة لا تقل عـن [ 48 ساعه ] -
+\`\`\`⁩
+
+**__اعتماد :  مجلس القضاء العسكري  | ${$('jApproverRank').value} |  ${mention('jApproverId')}   __**
+
+
+ || <@&1045009108945883289>  ||`;
+}
+
+function investigationText(){
+return `**الفرد : ${mention('iPersonId')}**
+
+
+الكود : ${$('iCode').value.trim()}
+
+المخالفة : ${$('iViolation').value.trim()}
+
+الاقوال : ${$('iStatement').value.trim()}
+
+الاقتراح : ${$('iSuggestion').value.trim()}
+
+
+\`الدليل :\` ${$('iEvidence').value.trim()}`;
+}
+
+function refresh(){
+ $('pSummon').textContent=summonText();
+ $('pJudgment').textContent=judgmentText();
+ $('pInvestigation').textContent=investigationText();
+}
+async function copyCurrent(type){
+ const text=type==='summon'?summonText():type==='judgment'?judgmentText():investigationText();
+ try{await navigator.clipboard.writeText(text)}catch(e){
+   const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+ }
+ $('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1400);
+}
+document.querySelectorAll('input,select,textarea').forEach(el=>{el.addEventListener('input',refresh);el.addEventListener('change',refresh)});
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');$(btn.dataset.tab).classList.add('active');
+}));
+refresh();
+</script>
+</body>
+</html>
